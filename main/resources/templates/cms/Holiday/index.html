@@ -1,0 +1,20 @@
+<!--#layout("/common/layout.html",{"jsBase":"/js/cms/Holiday/"}){ -->
+<layui:searchForm formId="searchForm"  condition="${search}">
+</layui:searchForm>
+
+<div class="layui-btn-group">
+    <layui:accessButton function="Holiday.add"  action="add">增加</layui:accessButton>
+    <layui:accessButton function="Holiday.edit"  action="edit">编辑</layui:accessButton>
+    <layui:accessButton function="Holiday.del"  action="del">删除</layui:accessButton>
+</div>
+
+<table id="HolidayTable" lay-filter="HolidayTable"></table>
+<!--#} -->
+<script>
+
+layui.use(['index'], function(){
+    var index = layui.index
+    index.init();
+});
+
+</script>

@@ -1,0 +1,93 @@
+<!--# layout("/common/layout.html",{"jsBase":"/js/cms/trip/"}){ -->
+
+<form class="layui-form layui-form-pane" id="updateForm">
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">原因</label>
+				<div class="layui-input-inline">
+					<input type="text" id="code" name="code"  value="${trip.code}"   class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">名称</label>
+				<div class="layui-input-inline">
+					<input type="text" id="name" name="name"  value="${trip.name}"   class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">password</label>
+				<div class="layui-input-inline">
+					<input type="text" id="password" name="password"  value="${trip.password}"   class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">createTime</label>
+				<div class="layui-input-inline">
+					<input type="text" id="createTime" name="createTime"  value="${trip.createTime,"yyyy-MM-dd"}"   class="layui-input input-date" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">orgId</label>
+				<div class="layui-input-inline">
+					<input type="text" id="orgId" name="orgId"  value="${trip.orgId}"   class="layui-input" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">用户状态 1:启用 0:停用</label>
+				<div class="layui-input-inline">
+					<input type="text" id="state" name="state"  value="${trip.state}"   class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">jobType1</label>
+				<div class="layui-input-inline">
+					<input type="text" id="jobType1" name="jobType1"  value="${trip.jobType1}"   class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+            <label class="layui-form-label">updateTime</label>
+				<div class="layui-input-inline">
+					<input type="text" id="updateTime" name="updateTime"  value="${trip.updateTime,"yyyy-MM-dd"}"   class="layui-input input-date" >
+				</div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">jobType0</label>
+				<div class="layui-input-inline">
+					<input type="text" id="jobType0" name="jobType0"  value="${trip.jobType0}"   class="layui-input" >
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-form-item">
+        </div>
+    </div>
+	<!-- 业务对象须有hidden字段，保存delFlag和version字段-->
+	<input type="hidden" name="delFlag" value=${trip.delFlag} />
+    <input type="hidden" name="id" value=${trip.id} />
+    <layui:submitButtons id="updateButton" />
+</form>
+<!--#} -->
+<script>
+layui.use(['edit'], function(){
+    var tripEdit = layui.edit
+    tripEdit.init();
+});
+</script>

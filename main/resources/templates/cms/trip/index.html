@@ -1,0 +1,20 @@
+<!--#layout("/common/layout.html",{"jsBase":"/js/cms/trip/"}){ -->
+<layui:searchForm formId="searchForm"  condition="${search}">
+</layui:searchForm>
+
+<div class="layui-btn-group">
+    <layui:accessButton function="trip.add"  action="add">增加</layui:accessButton>
+    <layui:accessButton function="trip.edit"  action="edit">编辑</layui:accessButton>
+    <layui:accessButton function="trip.del"  action="del">删除</layui:accessButton>
+</div>
+
+<table id="tripTable" lay-filter="tripTable"></table>
+<!--#} -->
+<script>
+
+layui.use(['index'], function(){
+    var index = layui.index
+    index.init();
+});
+
+</script>
